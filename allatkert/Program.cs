@@ -10,11 +10,12 @@
 			SzarazfoldiMeleg meleg = new("Gepárd", "hím", 20, 5);
 			SzarazfoldiTropusi tropusi = new("Gyűrűsfarkú maki", "hím", 9, 3);
 			Allatkert allatkert = new();
-			List<String> nevek = allatkert.AllatokNeve(vizi, hideg, mediterran, meleg, tropusi);
+			List<string> nevek = allatkert.AllatokNeve(vizi, hideg, mediterran, meleg, tropusi);
 			List<int> sebessegek = allatkert.AllatokSebessege(vizi, hideg, mediterran, meleg, tropusi);
 
             Console.WriteLine("Állatkert telítettsége: ");
             Telitettseg(allatkert.Meret, nevek.Count);
+			Verseny(nevek, sebessegek);
         }
 		static void Telitettseg(int meret, int hossz)
 		{
@@ -36,5 +37,9 @@
 			Console.WriteLine(vonal2);
             Console.WriteLine(sor);
         }
+		static void Verseny(List<string> nevek, List<int> sebessegek)
+		{
+
+		}
 	}
 }

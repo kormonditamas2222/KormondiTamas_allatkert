@@ -21,9 +21,9 @@ namespace allatkert
 
 		public int Meret { get => meret; set => meret = value; }
 		
-		public List<String> AllatokNeve(ViziAllat vizi, SzarazfoldiHideg hideg, SzarazfoldiMediterran mediterran, SzarazfoldiMeleg meleg, SzarazfoldiTropusi tropusi)
+		public List<string> AllatokNeve(ViziAllat vizi, SzarazfoldiHideg hideg, SzarazfoldiMediterran mediterran, SzarazfoldiMeleg meleg, SzarazfoldiTropusi tropusi)
 		{
-			List<String> nevek = new();
+			List<string> nevek = new();
 			nevek.Add(vizi.Nev);
 			nevek.Add(hideg.Nev);
 			nevek.Add(mediterran.Nev);
