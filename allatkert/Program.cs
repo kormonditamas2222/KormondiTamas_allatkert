@@ -13,7 +13,28 @@
 			List<String> nevek = allatkert.AllatokNeve(vizi, hideg, mediterran, meleg, tropusi);
 			List<int> sebessegek = allatkert.AllatokSebessege(vizi, hideg, mediterran, meleg, tropusi);
 
-			
+            Console.WriteLine("Állatkert telítettsége: ");
+            Telitettseg(allatkert.Meret, nevek.Count);
+        }
+		static void Telitettseg(int meret, int hossz)
+		{
+			string vonal = "-";
+			string vonal2 = "|";
+			string sor = new string(' ', meret + 2).Replace(" ", vonal);
+            Console.WriteLine(sor);
+            Console.Write(vonal2);
+			Console.BackgroundColor = ConsoleColor.Green;
+			for (int i = 0; i < hossz; i++)
+			{
+				Console.Write(" ");
+			}
+			Console.BackgroundColor = ConsoleColor.Black;
+			for (int i = 0; i < meret-hossz; i++)
+			{
+				Console.Write(" ");
+			}
+			Console.WriteLine(vonal2);
+            Console.WriteLine(sor);
         }
 	}
 }
