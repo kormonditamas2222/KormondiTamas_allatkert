@@ -15,6 +15,7 @@
 
             Console.WriteLine("Állatkert telítettsége: ");
             Telitettseg(allatkert.Meret, nevek.Count);
+			Thread.Sleep(3000);
 			Verseny(nevek, sebessegek);
         }
 		static void Telitettseg(int meret, int hossz)
@@ -39,7 +40,33 @@
         }
 		static void Verseny(List<string> nevek, List<int> sebessegek)
 		{
-
-		}
+			int startPos = LeghosszabbNev(nevek);
+            foreach (var item in nevek)
+            {
+                Console.WriteLine(item);
+            }
+			Thread.Sleep(2000);
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; j < sebessegek.Count; j++)
+				{
+					Console.SetCursorPosition(startPos + sebessegek[j] + i, i);
+                    Console.WriteLine("O");
+                }
+				Thread.Sleep(1000);
+			}
+        }
+		static int LeghosszabbNev(List<string> nevek)
+		{
+			int max = 0;
+            foreach (var item in nevek)
+            {
+                if (item.Length > max)
+				{
+					max = item.Length;
+				}
+            }
+			return max;
+        }
 	}
 }
