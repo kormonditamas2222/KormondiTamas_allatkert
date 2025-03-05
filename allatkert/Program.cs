@@ -40,21 +40,19 @@
         }
 		static void Verseny(List<string> nevek, List<int> sebessegek)
 		{
+			Console.Clear();
 			int startPos = LeghosszabbNev(nevek);
-            foreach (var item in nevek)
-            {
-                Console.WriteLine(item);
-            }
-			Thread.Sleep(2000);
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < 10; i++) 
 			{
-				for (int j = 0; j < sebessegek.Count; j++)
+				foreach (var item in nevek)
 				{
-					Console.SetCursorPosition(startPos + sebessegek[j] + i, i);
-                    Console.WriteLine("O");
-                }
+					Console.Write(item + " ");
+					Console.SetCursorPosition(startPos + sebessegek[nevek.IndexOf(item)] * i, nevek.IndexOf(item));
+					Console.WriteLine("O");
+				}
 				Thread.Sleep(1000);
-			}
+				Console.Clear();
+            }
         }
 		static int LeghosszabbNev(List<string> nevek)
 		{
